@@ -57,3 +57,13 @@ Explanation For Sample Input 1:
 For the first test case, the maximum element in the array is 6 and the minimum element in the array is 1.
 
 For the second test case, the maximum element in the array is 9 and the minimum element in the array is -4.
+
+  Sample Input 2:
+2
+5
+3 3 3 3 3 
+1
+-1
+Sample Output 2:
+6
+-2
