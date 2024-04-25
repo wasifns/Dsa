@@ -37,3 +37,9 @@ Sample Input 2:
 Sample Output 2:
  1 4 5 6 7 7 6
  10 4 5 2 6 3 1 6 3 
+
+  Problem statement
+You are given an array “ARR” of size N. Your task is to find out the sum of maximum and minimum elements in the array.
+
+Follow Up:
+Can you do the above task in a minimum number of comparisons?
