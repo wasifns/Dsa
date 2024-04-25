@@ -43,3 +43,17 @@ You are given an array “ARR” of size N. Your task is to find out the sum of 
 
 Follow Up:
 Can you do the above task in a minimum number of comparisons?
+
+Sample Input 1:
+2
+7
+1 2 4 5 6 6 6 
+6
+-1 -4 5 8 9 3
+Sample Output 1:
+7
+5
+Explanation For Sample Input 1:
+For the first test case, the maximum element in the array is 6 and the minimum element in the array is 1.
+
+For the second test case, the maximum element in the array is 9 and the minimum element in the array is -4.
