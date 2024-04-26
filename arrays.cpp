@@ -84,4 +84,27 @@ Input: arr[] = { 6, 8, 1, 9, 2, 1, 10, 10}
 Output: 10, 10, 9
 
 Approach:
-      
+
+  Given an array arr[] of N elements, sort the array according to the following relations:  
+
+arr[i] >= arr[i – 1], if i is even, ∀ 1 <= i < N
+arr[i] <= arr[i – 1], if i is odd, ∀ 1 <= i < N
+Print the resultant array.
+
+Examples:  
+
+Input: N = 4, arr[] = {1, 2, 2, 1}
+Output: 2 1 2 1
+Explanation:
+
+
+For i = 1, arr[1] <= arr[0]. So, 1 <= 2.
+For i = 2, arr[2] >= arr[1]. So, 2 >= 1.
+For i = 3, arr[3] <= arr[2]. So, 1 <= 2.
+Input: arr[] = {1, 3, 2}
+Output: 3 1 2
+Explanation:
+
+For i = 1, arr[1] <= arr[0]. So, 1 <= 3.
+For i = 2, arr[2] >= arr[1]. So, 2 >= 1.
+
