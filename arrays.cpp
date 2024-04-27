@@ -144,3 +144,15 @@ Test case 1:
 Here, ‘N’ = 4, ‘Arr’ = [5, 6, 7, 2] and ‘K’ = 3.
 Elements of the array in ascending order are [2, 5, 6, 7]
 Thus the 4rd smallest and 4rd largest elements of this array are 7 and 2 respectively.
+
+  Test case 2:
+See problem statement for an explanation.
+Sample Input 2:
+ 2
+ 1 1
+ 2
+ 5 1
+ 5 4 3 2 1
+Sample Output 2:
+ 2 2
+ 1 5
