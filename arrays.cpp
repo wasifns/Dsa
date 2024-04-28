@@ -64,17 +64,6 @@ For the second test case, the maximum element in the array is 9 and the minimum 
 3 3 3 3 3 
 1
 -1
-Sample Output 2:
-6
--2
-  Find the largest three distinct elements in an array
-Last Updated : 07 Mar, 2024
-Given an array with all distinct elements, find the largest three elements.
-
-Expected Time Complexity: O(n)
-Expected Auxiliary Space: O(1). 
-
-Examples :
 
 Input: arr[] = {10, 4, 3, 50, 23, 90}
 Output: 90, 50, 23
