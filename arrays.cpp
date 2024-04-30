@@ -158,3 +158,14 @@ Output:
 Explanation:
 Max subarray sum is -1 
 of element (-1)
+You don't need to read input or print anything. The task is to complete the function maxSubarraySum() which takes Arr[] and N as input parameters and returns the sum of subarray with maximum sum.
+
+
+Expected Time Complexity: O(N)
+Expected Auxiliary Space: O(1)
+
+
+Constraints:
+1 ≤ N ≤ 106
+-107 ≤ A[i] ≤ 107
+
