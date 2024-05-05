@@ -125,16 +125,8 @@ Sample Input 1:
 5 6 7 2
 4 3
 1 2 5 4
-Sample Output 1:
-7 2 
-4 2
-Explanation of Sample Input 1:
-Test case 1:
-Here, ‘N’ = 4, ‘Arr’ = [5, 6, 7, 2] and ‘K’ = 3.
-Elements of the array in ascending order are [2, 5, 6, 7]
 
- 1 5
-
+  
 
 
   
