@@ -116,7 +116,26 @@ You are given an array ‘Arr’ consisting of ‘N’ distinct integers and a p
 
 Example:
 
- 
+ class Solution
+{
+    public:
+    int peakElement(int arr[], int n){
+         // Edge case: If the array has only one element, return that element's index
+        if (n == 1) {
+            return 0;
+        }
+        
+        for (int i = 0; i < n; i++) {
+            // Check if the current element is a peak element
+            if ((i == 0 || arr[i] >= arr[i-1]) && (i == n-1 || arr[i] >= arr[i+1])) {
+                return i;
+            }
+        }
+        
+        // If no peak element is found, return -1 (should not happen as there is always a peak element)
+        return -1;
+    }
+};
 
 
   
