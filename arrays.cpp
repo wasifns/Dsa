@@ -137,5 +137,29 @@ Example:
     }
 };
 
+class Solution{
+    public:
 
+    //Function to check if two arrays are equal or not.
+    bool check(vector<long long> A, vector<long long> B, int N) {
+        if (A.size() != N || B.size() != N) {
+            return false; // If sizes don't match the given size N, return false
+        }
+
+        unordered_map<long long, int> countA, countB;
+
+        // Count elements in array A
+        for (int i = 0; i < N; i++) {
+            countA[A[i]]++;
+        }
+
+        // Count elements in array B
+        for (int i = 0; i < N; i++) {
+            countB[B[i]]++;
+        }
+
+        // Compare the counts
+        return countA == countB;
+    }
+};
   
