@@ -45,3 +45,32 @@ void sort012(int *arr, int n)
         }
     }
 }
+
+//solution 2
+#include <bits/stdc++.h> 
+void sort012(int *arr, int n){
+    
+    int current =0;
+    int zeroPos =0;
+    int twoPos = n-1;
+    while ( current <= twoPos){
+        if(arr[current] == 0){
+            swap(arr[current],arr[zeroPos]);
+            current++;
+            zeroPos++;
+        }
+
+        else if( arr[current] == 1){
+            current++;
+        }
+
+        else if( arr[current] == 2){
+            swap( arr[current], arr[twoPos]);
+            twoPos--;
+        }
+
+    }
+   
+   
+}
+
