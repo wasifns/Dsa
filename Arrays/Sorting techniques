@@ -1,3 +1,5 @@
+//SELECTION SORT
+
 {   
     for(int i = 0; i < n-1; i++){
         int mini = i;
@@ -14,7 +16,7 @@
 }
 
 
-
+//BUBBLE SORT
 Bubble Sort is one of the sorting algorithms that works by repeatedly swapping the adjacent elements of the array if they are not in sorted order.
 You are given an unsorted array consisting of N non-negative integers. Your task is to sort the array in non-decreasing order using the Bubble Sort algorithm.
 Sample Input 1:
@@ -33,7 +35,7 @@ Sample Output 2:
 1 2
 1 2 3 4
 
-/algorithm
+/CODE
 #include <bits/stdc++.h> 
 void bubbleSort(vector<int>& arr, int n)
 {   
@@ -47,4 +49,29 @@ void bubbleSort(vector<int>& arr, int n)
             }
         }
     }
+}
+
+//INSERTION SORT
+You are given ‘N’ integers in the form of an array ‘ARR’. Print the sorted array using the insertion sort.
+
+Note :
+No need to return anything. You should sort the array in-place.
+For example :
+Let ‘ARR’ be: [1, 4, 2]
+The sorted array will be: [1, 2, 4].
+
+//CODE
+#include <bits/stdc++.h> 
+void insertionSort(int n, vector<int> &arr){
+    for(int i=1; i<n; i++){
+        int key = arr[i];
+        int j = i-1;
+        while (j >= 0 && arr[j] > key) {
+          arr[j + 1] = arr[j];
+          j = j-1;
+        }
+        arr[j+1] = key;
+        
+    }
+    
 }
