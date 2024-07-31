@@ -1,3 +1,4 @@
+//BRUTEFORCE
 #include <iostream>
 using namespace std;
 //Function to print array
@@ -20,4 +21,54 @@ int main() {
    int arr[] = {5,4,3,2,1};
    reverseArray(arr, n);
    return 0;
+}
+
+
+
+
+//RECURSIVE APPROACH
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void input(vector<int> &arr, int &n){  
+    cout << "Enter the number of elements in an array:\n";
+    cin >> n;
+    arr.resize(n);
+    cout << "Enter the elements of the array:\n ";
+    for(int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+}
+
+void printArray(const vector<int> &arr){
+    for(const int &elem : arr){
+        cout << elem << " ";
+    }
+    cout << endl;
+    
+}
+
+void reverse(vector<int> &arr, int start, int end){
+    if(start >= end){
+        return;  
+    }
+        
+    swap(arr[start] , arr[end]);
+    reverse(arr, start+1, end-1);     
+}
+
+int main(){
+    int n;
+    vector<int> arr;
+    input(arr , n);
+    cout << "Input array: ";
+    printArray(arr);
+    reverse(arr, 0, arr.size()-1);
+    cout << "Reversed array: ";
+    printArray(arr);
+     
+    return 0;
+    
+
 }
