@@ -1,1 +1,255 @@
+The hash function yields an integer value from the given key, be it a character, string, integer, etc., and associates this index with the actual key.
 
+The syntax to create a template for hash class:
+
+template <class key> struct hash;
+
+Now, to create objects with the hash class, we can use the following syntax:
+
+hash<class template> object-name
+
+The hash class also has a single member function, operator(), that returns the object's hash value.
+
+Example:
+
+// Initializing character.
+char ch = 'n';
+
+// Creating object of the hash class.
+hash<char> ch_hash;
+
+// Using operator() to find hash value.
+cout << ch_hash(ch); 
+
+But How Does Hashing Work? There are two heuristic techniques (an approach that finds shortcuts to a solution that might not be optimal but can be reached within the required deadline) to create a hash function, hashing by division and hashing by multiplication. 
+
+A good hash function has the following properties:
+
+It should be efficient for computation.
+All the keys should be uniformly distributed in the hash table.
+How to work with hash function in C++
+
+Suppose we have 7 elements in an array. We must create a hash table where these elements will be stored for efficient access. When we come across the first element, 52, we'll perform the following operation to get its index.
+
+hash_index(key) = key % size of the hash table
+
+hash_index(key) = 52 % 7 = 3
+
+What if we have more than one element with the same index? As in our case, 52 and 66 will get the same index, 3. This leads to a collision. There's always a need for a good hash function to avoid collision in frequent cases, but it is likely to happen.
+
+There are two ways to deal with collision:
+
+Separate chaining
+Open Addressing
+deal with collision
+
+Hashing in C++ STL can be done with the help of the hash class, which we are yet to see in the examples given below. When we pass an argument to the hash class, it obtains the hash value of the passed argument. The hashed value makes searching for objects easier. The keys passed as the argument will be mapped to their obtained hash values.
+
+Given below are some programs to find the hash value of different arguments.
+
+Character Hashing
+
+// Program to demonstrate the character hashing.
+#include <iostream>
+
+// To avoid using std:: before each statement.
+using namespace std; 
+
+// Function for character hashing.
+void hashingChar() {
+    
+    char ch = 'n';
+    
+    // Instantiation of a hash object.
+    hash<char> char_hash; 
+    
+    // Using operator() to return hashed value.
+    cout << "The hashed value of character 'n' is: " << char_hash(ch) << endl; 
+}
+
+// Main function.
+int main() { 
+    // Calling function for character hashing.
+    hashingChar(); 
+}  
+
+Output:
+
+The hashed value is: 110
+
+String Hashing
+
+// Program to demonstrate the string hashing.
+#include <iostream>
+
+// To avoid using std:: before each statement.
+using namespace std; 
+
+// Function for string hashing.
+void hashingString() {
+    
+    string str = "hashing";
+    
+    // Instantiation of a hash object.
+    hash<string> string_hash; 
+    
+    // Using operator() to return hashed value.
+    cout << "The hashed value of string is: " << string_hash(str) << endl; 
+}
+
+// Main function.
+int main() { 
+    // Calling function for string hashing.
+    hashingString(); 
+} 
+
+Output:
+
+The hashed value of the string is: 11997348938128597782
+
+Integer Hashing
+
+// Program to demonstrate the integer hashing.
+#include <iostream>
+
+// To avoid using std:: before each statement.
+using namespace std; 
+
+// Function for integer hashing.
+void hashingInteger() {
+    
+    int num = 17;
+    
+    // Instantiation of a hash object.
+    hash<int> int_hash; 
+    
+    // Using operator() to return hashed value.
+    cout << "The hashed value of integer is: " << int_hash(num) << endl; 
+}
+
+// Main function.
+int main() { 
+    // Calling function for string hashing.
+    hashingInteger(); 
+} 
+
+Output:
+
+The hashed value of the integer is: 17
+
+Vector Hashing
+
+// Program to demonstrate the vector hashing
+#include <iostream>
+#include <vector>
+
+// To avoid using std:: before each statement.
+using namespace std; 
+
+// Function for vector hashing.
+void hashingVector() {
+    
+    vector<bool> vec { true, true, false, false };
+    
+    // Instantiation of a hash object.
+    hash<vector<bool>> vector_hash; 
+    
+    // Using operator() to return hashed value.
+    cout << "The hashed value of vector_hash is: " << vector_hash(vec) << endl; 
+}
+
+// Main function.
+int main() { 
+    // Calling function for vector hashing.
+    hashingVector(); 
+} 
+
+Output:
+
+The hashed value of vector_hash is: 17166569625921664880
+
+Examples to Understand the Working of Hashing Function in C++
+Let us look at a C++ program to see how the hash function works for a hash table. We also need to deal with collision, so each index comprises a list sequence of keys because two or more keys can have the same table position.
+
+And to get the index, we'll use the following hash function, get_hash(), which returns the index by division.
+
+int get_hash(int key) {
+    return key % ht_size;
+}
+
+Here, ht_size is the size of the hash table.
+
+// Program to demonstrate the working of the hash function in the table.
+#include <iostream>
+#include <list>
+
+using namespace std;
+
+// Creating class hash table.
+class hash_table {
+        // Initializing a list for every index.
+        list<int> *tbl;
+        int ht_size;
+        
+        // Hash function to get the index of the keys.
+        int get_hash(int key) {
+            return key % ht_size;
+        }
+    
+    public:
+        // Constructor for the class hash_table.
+        hash_table(int n) { 
+            ht_size = n;
+            tbl = new list<int>[ht_size];
+        }
+    
+    // Function to insert keys in the hash table.
+    void insert_key(int key) {
+        tbl[get_hash(key)].push_back(key);
+    }
+    
+    // Function to display all the keys at their indexes.
+    void show() {
+        for(int i = 0; i < ht_size; i++) {
+            cout << "Values at index " << i << ": ";
+            for(int num : tbl[i])
+                cout << num << " ";
+            cout << endl;
+        }
+    }
+};
+
+// Main function.
+int main() {
+    // Creating an array of keys.
+    int arr[] = {52, 42, 44, 66, 25, 29, 32};
+    
+    // Find the size of the array.
+    int sz_arr = sizeof(arr)/sizeof(int);
+    
+    // Initializing the hash table.
+    hash_table ht(sz_arr);
+    
+    // Inserting the elements into the hash table.
+    for(int i = 0; i < sz_arr; i++) {
+        ht.insert_key(arr[i]);
+    }
+    cout << "The hash table after insertion of elements: " << endl;
+    // Calling function to display the hash table.
+    ht.show();
+    
+    return 0;
+}
+
+Output:
+
+The hash table after the insertion of elements: 
+Values at index 0: 42 
+Values at index 1: 29 
+Values at index 2: 44 
+Values at index 3: 52 66 
+Values at index 4: 25 32
+Values at index 5:  
+Values at index 6: 
+
+As evident in the above program, we can have several keys having the same index after division, so both keys have to be associated with the same index. Therefore, a list has to be used at every index to store more keys in the same position.
