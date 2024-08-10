@@ -2,8 +2,7 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-// Function to check if a
-// number is an Armstrong number
+
 bool isArmstrong(int num) {
     // Calculate the number of
     // digits in the given number
