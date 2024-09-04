@@ -24,15 +24,6 @@ void atleastTwoGreatest(std::vector<int> &vec){
 }
 
 
-int main(){
-    int size;
-    std::cout << "Enter the size of array:\n";\
-    std::cin >> size;
-    std::vector<int> vec(size);
-    initialiseVector(vec);
-    atleastTwoGreatest(vec);
-}
-
 /*      ISSUES           SOLUTIONS
     1-logic building: >using single for loop
                       >simulteneously assigning values to max1 and max2 as the loop iteratres
