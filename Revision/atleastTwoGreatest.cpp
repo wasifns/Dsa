@@ -2,7 +2,7 @@
 #include <limits.h>
 #include "vectorInput.h"
 using namespace std;
-
+//vectorInput.h has the dynamic array input funtion 
 void atleastTwoGreatest(std::vector<int> &vec){
 
     int max1 = INT_MIN;
