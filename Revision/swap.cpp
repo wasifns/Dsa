@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 
-//creating vector
+
 void initialiseVector(std::vector<int> &vec){
     std::cout << "Enter " << vec.size() << " elements\n";
     for(int i = 0; i < vec.size(); i++){
