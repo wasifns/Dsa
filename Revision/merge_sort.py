@@ -7,11 +7,10 @@ def merge_sort_recursive(arr):
         left_half = arr[:mid]
         right_half = arr[mid:]
 
-        # Recursively sorting both halves
+       
         merge_sort_recursive(left_half)
         merge_sort_recursive(right_half)
 
-        # Merging the two halves
         i = j = k = 0
 
         while i < len(left_half) and j < len(right_half):
