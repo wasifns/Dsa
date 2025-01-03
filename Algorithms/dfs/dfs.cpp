@@ -11,7 +11,7 @@ struct Vertex {
 std::array<int, MAX> stack;
 int top = -1;
 //graph variables
-//array of vertices 
+
 std::array<Vertex*, MAX> lstVertices;
 //adjacency matrix
 std::array<std::array<int, MAX>, MAX> adjMatrix;
